@@ -1,0 +1,108 @@
+.messages{
+    overflow-y:scroll;
+    display: flex;
+    flex-direction: column;
+    flex: 0.8;
+    background-color: rgb(31, 31, 34);
+   
+
+}
+.messages__messages{
+   display: flex;
+   flex-direction: column;
+
+   justify-content: flex-start;
+   flex: 1;
+   padding: 30px;
+margin: 0 auto;
+   max-width: 50%;
+}
+.messsages__timestamp{
+    color: #9aa0a6;
+    font-size: small;
+    text-align: center;
+}
+.messages__header{
+    padding: 20px;
+    opacity: 0.8;
+    color: white ;
+    display: flex;
+    position: sticky;
+    border-bottom: 3px  solid rgb(24, 24, 24);
+    height: 68;
+    margin-left: 5px;
+    margin-right: 15px;
+}
+.messages__header > .MuiSvgIcon-root{
+    margin-left: 15px;
+}
+
+.messages__header >h3{
+    flex:1;
+    font-weight: 400;
+}
+
+.messages__input{
+    position: sticky;
+    display: flex;
+    place-items: center;
+    margin-bottom: 20px;
+    justify-content: center;
+  
+     
+}
+.messages__inputIcons{
+    display: flex;
+    margin-right: 15px;
+    color:#dadce0
+}
+.messages__inputIcons > .MuiSvgIcon-root{
+    margin-left: 5px;
+    padding: 3px;
+}
+
+.messages__inputContainer{
+    display: flex;
+    background-color: #3c4043;
+    border-radius: 30px;
+    height: 52px;
+    place-items: center;
+    width: 60%;
+    
+}
+.messages__inputButton{
+    margin-left: 20px;
+    background-color: #3c4043;
+    border-radius: 30px;
+    height: 52px;
+    width: 52px;
+   
+   
+
+}
+.messages__inputButton > button{
+    
+    color: white;
+    border-radius: 20px;
+    background: transparent;
+    border: none;
+   
+    
+}
+.messages__inputButton > button > .MuiSvgIcon-root{
+   margin: 10px;
+}
+.messages__inputContainer >form > input{
+    width: 96%;
+    background-color: #3c4043;
+    color: grey; 
+    border: none;
+    outline-width: 0;
+    border-radius: 30px;
+    margin-left: 15px;
+    font-size:14px;
+}
+
+.messages__inputContainer > form{
+    flex: 1;
+}

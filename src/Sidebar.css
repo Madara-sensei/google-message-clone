@@ -1,0 +1,62 @@
+.sidebar{
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    background-color: #2a2b2e;
+    flex : 0.19;
+    height: 100vh;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 6px;
+    
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: grey;
+  
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #2a2b2e;
+  }
+  
+
+
+
+.sidebar__chatBtn > button{
+    background-color: #185abc;
+    color: white;
+    border-radius: 25px;
+    padding: 10px;
+    margin-top: 15px;
+    margin-left: 25px;
+    width: 230px;
+    height: 48px;
+}
+
+
+
+
+
+.sidebar__header{
+    display: flex;
+    height: 70px;
+    margin: 17px;
+    padding: 5px;
+}
+.sidebar__header > .MuiSvgIcon-root{
+    color: white;
+}
+.sidebar__header > h3{
+    color: white;
+    flex:1;
+    font-weight: 400;
+}
+
+.sidebar__contactList{
+    margin-top: 10px;
+}

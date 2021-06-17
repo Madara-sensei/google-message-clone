@@ -1,0 +1,47 @@
+.contactItem{
+    display: flex;
+    margin-top: 5px;
+    align-items: center;
+}
+
+
+.contactItem:hover{
+    background-color: rgba(248,249,250,0.09);
+
+}
+
+.contactItem__info{
+    flex :1;
+    margin :10px;
+}
+.contactItem__avatar{
+    padding: 2px;
+    margin: 12px ;
+    
+ 
+}
+.contactItem__info >h3{
+    color: white;
+    font-weight: 400;
+    font-size: medium;
+}
+.contactItem__info > p{
+    color: grey
+}
+.contactItem__param{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 5px;
+}
+.contactItem__param > .MuiSvgIcon-root{
+    margin-top: 5px;
+    color: lightgray;
+    font-size: medium;
+  
+}
+.contactItem__param > p{
+    color: grey;
+    font-size: small;
+    
+}
