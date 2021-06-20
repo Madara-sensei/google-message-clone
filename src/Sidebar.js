@@ -4,39 +4,64 @@ import MoreVertIcon from '@material-ui/icons/MoreVert';
 import ContactItem from './components/ContactItem';
 import ChatOutlinedIcon from '@material-ui/icons/ChatOutlined';
 import { Button } from '@material-ui/core';
+import { selectUser } from './features/userSlice';
+import { useSelector } from 'react-redux';
+import { useState ,useEffect} from 'react';
+import db from './firebase';
+
 function Sidebar() {
+    const user = useSelector(selectUser)
+    const [contactList, setcontactList] = useState([])
+
+    
+    useEffect(() => {
+        if(user){
+         db.collection("users")
+         .doc(user.uid)
+         .collection("contact")
+        
+         .onSnapshot((snapshot)=>{
+         setcontactList(snapshot.docs.map((doc)=>({
+             id:doc.id,
+             contact : doc.data()
+             
+         })
+     
+    
+        ))
+      
+      })
+     
+     }
+    },[user])
+  
     return (
         <div className="sidebar">
             <div className="sidebar__header">
-                <h3>Messages</h3>
-                <MoreVertIcon size="large"/>
-            </div>
-            <div className="sidebar__chatBtn">
-                <Button>
-                        <ChatOutlinedIcon/>
-                        <h5>Démarrer une discussion</h5>
-                </Button>
+                <div className="sidebar__headerText">
+                    <h3>Messages</h3>
+                    <MoreVertIcon size="large"/>
+                </div>
+                <div className="sidebar__headerButton">
+                    <Button href="/new">
+                            <ChatOutlinedIcon/>
+                            <h5>Démarrer une discussion</h5>
+                    </Button>
 
-            </div>
+                </div>
+        </div>
+           
          
          
             <div className="sidebar__contactList">
-                <ContactItem photo = "" lastMessage="test je suis la" name="Hugo"/>
-                <ContactItem photo = "" lastMessage="Test test" name="Francis"/>
-                <ContactItem photo = "" lastMessage="Je suis la " name="Martin"/>
-                <ContactItem photo = "" lastMessage="Je suis la " name="Martin"/>
-                <ContactItem photo = "" lastMessage="Je suis la " name="Martin"/>
-                <ContactItem photo = "" lastMessage="Je suis la " name="Martin"/>
-                <ContactItem photo = "" lastMessage="Je suis la " name="Martin"/>
-                <ContactItem photo = "" lastMessage="Je suis la " name="Martin"/>
-                <ContactItem photo = "" lastMessage="Je suis la " name="Martin"/>
-                <ContactItem photo = "" lastMessage="Je suis la " name="Martin"/>
-                <ContactItem photo = "" lastMessage="Je suis la " name="Martin"/>
-                <ContactItem photo = "" lastMessage="Je suis la " name="Martin"/>
-                <ContactItem photo = "" lastMessage="Je suis la " name="Martin"/>
-                <ContactItem photo = "" lastMessage="Je suis la " name="Martin"/>
-                <ContactItem photo = "" lastMessage="Je suis la " name="Martin"/>
-                <ContactItem photo = "" lastMessage="Je suis la " name="Martin"/>
+                {  
+                    contactList.map(({id,contact})=>{
+                        return(
+                            <ContactItem key={id} id={id} photo={null} lastMessage="Salut" name ={contact.mail.substring(0,6)}/>
+                        )
+                    })
+                }
+              
                 
             </div>
         </div>

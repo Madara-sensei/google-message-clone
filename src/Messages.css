@@ -1,21 +1,34 @@
 .messages{
-    overflow-y:scroll;
+    overflow-y: scroll;
     display: flex;
     flex-direction: column;
-    flex: 0.8;
+    flex: 0.81;
     background-color: rgb(31, 31, 34);
    
-
 }
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+  ::-webkit-scrollbar-track {
+    background: #2a2b2e;
+}
+  ::-webkit-scrollbar-thumb {
+    background: #4b4f52;
+    border-radius: 4px;
+}
+  
 .messages__messages{
+
    display: flex;
    flex-direction: column;
-
-   justify-content: flex-start;
+   max-height: 82vh;
    flex: 1;
    padding: 30px;
-margin: 0 auto;
-   max-width: 50%;
+   margin: 0 auto;
+   bottom : -10px;
+   order: 2;
+  
 }
 .messsages__timestamp{
     color: #9aa0a6;
@@ -23,15 +36,17 @@ margin: 0 auto;
     text-align: center;
 }
 .messages__header{
+     overflow-x: hidden;
     padding: 20px;
-    opacity: 0.8;
+    opacity: 0.95;
     color: white ;
     display: flex;
-    position: sticky;
-    border-bottom: 3px  solid rgb(24, 24, 24);
-    height: 68;
-    margin-left: 5px;
-    margin-right: 15px;
+    top:0;
+    position: absolute;
+    box-shadow: 0 2px 6px 0 rgba(0,0,0,0.45);
+    width: 79vw;
+    z-index: 10;
+    background-color: rgb(31, 31, 34);
 }
 .messages__header > .MuiSvgIcon-root{
     margin-left: 15px;
@@ -42,14 +57,16 @@ margin: 0 auto;
     font-weight: 400;
 }
 
-.messages__input{
-    position: sticky;
+.messages__input > form{
+    width: 80vw;
+    height: 100px;
+    position: absolute;
+    bottom: 0;
     display: flex;
     place-items: center;
-    margin-bottom: 20px;
     justify-content: center;
-  
-     
+    background: linear-gradient(180deg,rgba(52, 53, 56, 0) 0,  rgb(31, 31, 34) 45%);
+ 
 }
 .messages__inputIcons{
     display: flex;
@@ -70,32 +87,32 @@ margin: 0 auto;
     width: 60%;
     
 }
-.messages__inputButton{
-    margin-left: 20px;
+.messages__sendButton{
+    margin-left: 10px;
     background-color: #3c4043;
     border-radius: 30px;
     height: 52px;
     width: 52px;
-   
-   
+    text-align: center;
 
 }
-.messages__inputButton > button{
-    
+.messages__sendButton > button{
     color: white;
     border-radius: 20px;
     background: transparent;
     border: none;
-   
-    
 }
-.messages__inputButton > button > .MuiSvgIcon-root{
-   margin: 10px;
+.messages__sendButton > button:disabled{
+    color: rgba(232,234,237,0.38);
 }
-.messages__inputContainer >form > input{
+.messages__sendButton > button > .MuiSvgIcon-root{
+    margin: 13px 13px 13px 10px;
+}
+
+.messages__inputContainer > input{
     width: 96%;
     background-color: #3c4043;
-    color: grey; 
+    color: white; 
     border: none;
     outline-width: 0;
     border-radius: 30px;

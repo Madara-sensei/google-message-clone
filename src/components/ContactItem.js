@@ -2,10 +2,24 @@ import React from 'react'
 import { Avatar } from '@material-ui/core'
 import './ContactItem.css'
 import MoreVertIcon from '@material-ui/icons/MoreVert';
+import { setSelectedChat } from '../features/appSlice';
+import { useDispatch } from 'react-redux'; 
 
-function ContactItem({photo,lastMessage,name}) {
+
+function ContactItem({photo,lastMessage,name,id}) {
+    const dispatch = useDispatch();
+
+
     return (
-        <div className="contactItem">
+        <div className="contactItem" onClick={()=>
+            {
+                dispatch(setSelectedChat({
+                    id : id,
+                    name : name
+                }))
+            }
+        }>
+    
             
             <Avatar className="contactItem__avatar"/>
             <div className="contactItem__info">
@@ -19,8 +33,7 @@ function ContactItem({photo,lastMessage,name}) {
                 <MoreVertIcon size="small"/>
 
             </div>
-          
-         
+    
             
         </div>
     )

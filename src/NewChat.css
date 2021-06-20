@@ -1,0 +1,131 @@
+.newChat{
+    overflow-y:scroll;
+    display: flex;
+    flex-direction: column;
+    flex: 0.81;
+    background-color: rgba(32,33,36,1);
+    
+}
+::-webkit-scrollbar {
+    width: 8px;
+}
+  ::-webkit-scrollbar-track {
+    background: #2a2b2e;
+}
+  ::-webkit-scrollbar-thumb {
+    background: #4b4f52;
+    border-radius: 4px;
+}
+  
+
+.newChat__header{
+    color: white ;
+    display: flex;
+    top:0;
+    position: absolute;
+    border-bottom: 1px solid #3c4043;
+    width: 81vw;
+    z-index: 2;
+    background-color: rgba(32,33,36,1);
+    display: flex;
+    flex-direction: column;
+}
+.newChat__headerText{
+    padding: 20px;
+    box-shadow:  0 2px 6px 0 rgba(0,0,0,0.45);
+    display: flex;
+
+}
+.newChat__headerText > h3{
+    margin-left: 10px;
+    font-weight: 400;
+}
+
+.newChat__contactList{
+   margin-top: 140px;
+   height: 70vh;
+   width: 80vw;
+  
+}
+.newChat__headerSearch{
+    padding: 20px;
+    display: flex;
+    place-items: center;
+}
+.newChat__headerSearch > form >input{
+    width: 95%;
+    background-color: rgba(32,33,36,1);
+    color: white; 
+    border: none;
+    outline-width: 0;
+    border-radius: 30px;
+    margin-left: 15px;
+    font-size:14px;
+
+
+
+}
+.newChat__headerSearch > form > button{
+    display: none;
+}
+.newChat__headerSearch >p{
+    margin-bottom: 4px;
+}
+.newChat__startChat{
+    display: flex;
+    padding: 15px;
+    border-radius: 5px;
+    height: 64px;
+    margin-top: 5px;
+}
+.newChat__startChat{
+    display: flex;
+    width: 79vw;
+    background-color: rgba(32,33,36,1);
+    border: none;
+    color: white;
+    place-items: center;
+}
+.newChat__startChat:hover{
+    background-color: rgba(248,249,250,0.09);
+}
+.newChat__startChat > h3{
+    margin-left: 5px;
+   
+    font-weight: 400;
+    padding: 15px;
+}
+.newChat__startChat > .MuiSvgIcon-root{
+    color: #8ab4f8;
+    padding: 5px;
+}
+
+.newChat__contactList > h4{
+  
+    color: white;
+    font-weight: 500;
+    padding: 5px;
+
+    margin: 10px 5px 0px 25px;
+}
+.newChat__contact{
+    display: flex;
+    padding: 16px;
+    
+}
+.newChat__avatar{
+    margin-left: 15px;
+}
+.newChat__contact:hover{
+    background-color: rgba(248,249,250,0.09);
+}
+
+.newChat__contactInfo{
+    margin-left: 18px;
+}
+.newChat__contactInfo  >h4{
+    color:white;
+    font-weight: 400;
+}.newChat__contactInfo > p{
+    color: #9aa0a6; 
+}

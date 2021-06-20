@@ -2,12 +2,17 @@
     display: flex;
     margin-top: 5px;
     align-items: center;
+    padding: 5px;
+    
 }
-
 
 .contactItem:hover{
     background-color: rgba(248,249,250,0.09);
 
+}
+
+.contactItem:hover .contactItem__param > .MuiSvgIcon-root{
+    visibility: visible;
 }
 
 .contactItem__info{
@@ -15,10 +20,7 @@
     margin :10px;
 }
 .contactItem__avatar{
-    padding: 2px;
-    margin: 12px ;
-    
- 
+    margin: 12px 12px 10px 15px;
 }
 .contactItem__info >h3{
     color: white;
@@ -26,7 +28,7 @@
     font-size: medium;
 }
 .contactItem__info > p{
-    color: grey
+    color: #9aa0a6
 }
 .contactItem__param{
     display: flex;
@@ -38,10 +40,11 @@
     margin-top: 5px;
     color: lightgray;
     font-size: medium;
-  
+    visibility: hidden;
 }
+
 .contactItem__param > p{
-    color: grey;
+    color: #9aa0a6;
     font-size: small;
     
 }
