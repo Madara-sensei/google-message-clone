@@ -111,7 +111,7 @@
 .newChat__contact{
     display: flex;
     padding: 16px;
-    
+    text-decoration: none;
 }
 .newChat__avatar{
     margin-left: 15px;

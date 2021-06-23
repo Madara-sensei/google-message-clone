@@ -3,7 +3,7 @@
     margin-top: 5px;
     align-items: center;
     padding: 5px;
-    
+    text-decoration: none;
 }
 
 .contactItem:hover{
@@ -46,5 +46,6 @@
 .contactItem__param > p{
     color: #9aa0a6;
     font-size: small;
+ 
     
 }

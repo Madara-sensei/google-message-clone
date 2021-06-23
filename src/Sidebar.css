@@ -36,16 +36,32 @@
     border-radius: 25px;
     box-shadow: 0 2px 4px rgb(0 0 0 / 14%), 0 3px 4px rgb(0 0 0 / 12%);
     margin : -10px 10px 15px 15px;
-    width: 11vw;
+    width: 231px;
     height: 48px;
-}
-.sidebar__headerButton > button > h5{
-    font-size: 200;
+  
 }
 
+.sidebar__headerButtonText{
+    font-weight: 600;
+    margin-left: 7px;
+   
+  
+}
 
+.sidebar__options{
+        color: grey;
+}
+.sidebar__options > .MuiPaper-root{
+    background-color: #404243;
+    color : #e8eaed;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 15px;
+}
+.sidebar__options > .MuiPaper-root >.MuiMenuItem{
+    padding: 15px;
 
-
+}
 .sidebar__header{
     position: absolute;
     top : 0;
@@ -63,16 +79,28 @@
 .sidebar__headerText{
     display: flex;
     height: 70px;
-    margin: 10px;
+    margin: 10px 15px 20px 20px;
     padding: 5px;
+    place-items: center;
 }
-.sidebar__headerText > .MuiSvgIcon-root{
+.sidebar__headerText>  button {
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+ 
+    outline:none;
+    
+}
+.sidebar__headerText>  button > .MuiSvgIcon-root{
     color: white;
 }
 .sidebar__headerText > h3{
     color: white;
     flex:1;
     font-weight: 400;
+    letter-spacing: 0.5px;
+    font-size: 1.3em;
 }
 
 .sidebar__contactList{

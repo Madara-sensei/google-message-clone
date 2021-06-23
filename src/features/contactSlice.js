@@ -8,7 +8,7 @@ export const contactSlice = createSlice({
     },
     reducers:{
         setContactList: (state,action)=>{
-            state.user = action.payload
+            state.contactList += action.payload
         },
         delContactList:(state)=>{
             state.contactList = null
@@ -21,6 +21,6 @@ export const contactSlice = createSlice({
 export const {setContactList,delContactList} = contactSlice.actions
 
 // Store data
-export const selectContactList = (state) => state.contactList
+export const selectContactList = (state) => state.contact.contactList
 
 export default contactSlice.reducer;

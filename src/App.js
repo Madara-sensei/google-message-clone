@@ -11,16 +11,20 @@ import NewChat from './NewChat';
 import {auth} from './firebase';
 import { useDispatch } from 'react-redux';
 import {login,logout} from './features/userSlice'
+import db from './firebase';
+import { selectContactList, setContactList } from './features/contactSlice';
 
 function App() {
   const user = useSelector(selectUser);
   const dispatch = useDispatch()
+  const contactList = useSelector(selectContactList)
   useEffect(() => {
     auth.onAuthStateChanged(
 
       (authUser)=>{
     
       if(authUser){
+       
         dispatch(login({
           uid: authUser.uid,
           photo: authUser.photoURL,
@@ -29,6 +33,8 @@ function App() {
 
 
         })
+      
+     
 
         )
       }else{
@@ -48,14 +54,17 @@ function App() {
               user ?
               <>
               <Sidebar/>
-              <Route path="/messages" render={()=> <Messages/>}></Route>
-              <Route path="/new" render={()=><NewChat/>}></Route>
+              <Route path="/messages" render={()=> <Messages/>}/>
+              <Route path="/new" render={()=><NewChat/>}/>
             
             
               </>
-              : <Route path="/login" render={()=><Login/>}></Route>
-              
 
+              :
+              <>
+               <Route path="/login" render={()=><Login/>}></Route>
+         
+              </>
             }
 
            
